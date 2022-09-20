@@ -1,6 +1,6 @@
 # bg_location_fetch
 
-This plugging is developer for only ios
+This plugging is developed for only ios
 ## Getting Started
 
 ```
