@@ -29,4 +29,5 @@ public class SwiftBgLocationFetchPlugin: NSObject, FlutterPlugin {
     LocationManager.shared.startMySignificantLocationChanges()
   }
  
+ 
 }

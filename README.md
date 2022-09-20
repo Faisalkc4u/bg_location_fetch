@@ -25,11 +25,8 @@ import bg_location_fetch
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
-    // Add bg_location_fetch this line
-        let remoteLocation = launchOptions?[UIApplication.LaunchOptionsKey.location] as? [String: Any]
-           if remoteLocation != nil {
+// Add bg_location_fetch this line
               SwiftBgLocationFetchPlugin.initCall()
-           }
     // END bg_location_fetch this line
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }

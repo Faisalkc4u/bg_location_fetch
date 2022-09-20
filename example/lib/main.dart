@@ -58,6 +58,12 @@ class _MyAppState extends State<MyApp> {
             children: [
               MaterialButton(
                 onPressed: () {
+                  _bgLocationFetchPlugin.requestForPermission();
+                },
+                child: const Text("Permission"),
+              ),
+              MaterialButton(
+                onPressed: () {
                   _bgLocationFetchPlugin.setValues({
                     "auth_token": "123123",
                     "upload_url":
@@ -68,9 +74,9 @@ class _MyAppState extends State<MyApp> {
               ),
               MaterialButton(
                 onPressed: () {
-                  initPlatformState();
+                  _bgLocationFetchPlugin.initService();
                 },
-                child: const Text("Upload Call"),
+                child: const Text("Init Service Call"),
               ),
               Text('Running on: $_platformVersion\n'),
             ],

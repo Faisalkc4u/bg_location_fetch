@@ -27,21 +27,21 @@ class DataCenter{
             json["mode"] = "F"
         }
         
-      do {
-                 let data = try JSONSerialization.data(withJSONObject: json, options: [])
-                 var request = URLRequest(url: URL(string: url)!)
-                 request.addValue((authToken ?? "")!, forHTTPHeaderField: "Authorization")
-                 request.httpMethod = "POST"
-                 request.httpBody = data
-                 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                 request.addValue("application/json", forHTTPHeaderField: "Accept")
-
-                 let task = URLSession.shared.dataTask(with: request)
-                 task.resume()
-
-             }catch{
-                  
-             }
-      
+        do {
+            let data = try JSONSerialization.data(withJSONObject: json, options: [])
+            var request = URLRequest(url: URL(string: url)!)
+            request.addValue((authToken ?? "")!, forHTTPHeaderField: "Authorization")
+            request.httpMethod = "POST"
+            request.httpBody = data
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
+            let task = URLSession.shared.dataTask(with: request)
+            task.resume()
+            
+        }catch{
+            
+        }
+        
     }
 }
