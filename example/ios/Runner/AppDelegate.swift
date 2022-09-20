@@ -1,5 +1,6 @@
 import UIKit
 import Flutter
+
 import bg_location_fetch
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -8,10 +9,12 @@ import bg_location_fetch
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
-        let remoteNotif = launchOptions?[UIApplication.LaunchOptionsKey.location] as? [String: Any]
-           if remoteNotif != nil {
-    SwiftBgLocationFetchPlugin.initCall()
+    // Add bg_location_fetch this line
+        let remoteLocation = launchOptions?[UIApplication.LaunchOptionsKey.location] as? [String: Any]
+           if remoteLocation != nil {
+              SwiftBgLocationFetchPlugin.initCall()
            }
+    // END bg_location_fetch this line
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
    
