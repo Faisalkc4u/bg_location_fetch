@@ -18,17 +18,21 @@ class DataCenter{
         let authToken : String? = DataStorage.getKey(keyValue: "auth_token")
         var json = [String:Any]()
         var cord = [String:Any]()
-        cord["coordinates"]=[longitude , latitude]
-        json["location_points_long_lat"] = [cord]
+        cord["longitude"]=longitude
+        cord["latitude"]=latitude
         if(bgMode)
         {
-            json["mode"] = "B"
-        }else{
-            json["mode"] = "F"
+            cord["mode"] = "B"
+        }
+        else{
+            cord["mode"] = "F"
         }
         
+        json["location_points_long_lat"] = [cord]
+        
+        
         do {
-            let data = try JSONSerialization.data(withJSONObject: json, options: [])
+             let data = try JSONSerialization.data(withJSONObject: json, options: [])
             var request = URLRequest(url: URL(string: url)!)
             request.addValue((authToken ?? "")!, forHTTPHeaderField: "Authorization")
             request.httpMethod = "POST"
@@ -39,8 +43,8 @@ class DataCenter{
             let task = URLSession.shared.dataTask(with: request)
             task.resume()
             
-        }catch{
-            
+         }catch{
+            print("There is network Error")
         }
         
     }

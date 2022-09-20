@@ -28,7 +28,6 @@ public class SwiftBgLocationFetchPlugin: NSObject, FlutterPlugin {
     }
   }
   public static func initCall(){
-    LocationManager.shared.requestLocationAuthorization()
     LocationManager.shared.startMySignificantLocationChanges()
   }
  

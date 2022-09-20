@@ -11,6 +11,10 @@ import UIKit
 class LocationManager: NSObject, CLLocationManagerDelegate {
     
     static let shared = LocationManager()
+    override init() {
+        super.init()
+        self.locationManager.delegate = self
+    }
     private var locationManager: CLLocationManager = CLLocationManager()
     private var requestLocationAuthorizationCallback: ((CLAuthorizationStatus) -> Void)?
     
@@ -34,7 +38,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         
     }
     public func requestLocationAuthorization() {
-        self.locationManager.delegate = self
+       
         var currentStatus:CLAuthorizationStatus?
         if #available(iOS 14, *) {
             currentStatus = CLLocationManager().authorizationStatus
