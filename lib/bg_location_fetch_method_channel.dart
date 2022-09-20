@@ -21,4 +21,14 @@ class MethodChannelBgLocationFetch extends BgLocationFetchPlatform {
     await methodChannel.invokeMethod<void>('token', keys);
     return;
   }
+
+  @override
+  Future<void> initService() async {
+    await methodChannel.invokeMethod<void>('start_service');
+  }
+
+  @override
+  Future<void> requestForPermission() async {
+    await methodChannel.invokeMethod<void>('request_permission');
+  }
 }

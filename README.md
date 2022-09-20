@@ -52,8 +52,13 @@ import bg_location_fetch
                   });
  ```
 
+ - Permission request for location
+
+ ```
+  await _bgLocationFetchPlugin.requestForPermission()
+ ```
  - Start accessing location
 
  ```
-  await _bgLocationFetchPlugin.getPlatformVersion()
+  await _bgLocationFetchPlugin.initService()
  ```

@@ -30,4 +30,12 @@ abstract class BgLocationFetchPlatform extends PlatformInterface {
   Future<void> token(Map<String, dynamic> keys) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<void> requestForPermission() {
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<void> initService() {
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
 }

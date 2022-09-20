@@ -15,11 +15,13 @@ public class SwiftBgLocationFetchPlugin: NSObject, FlutterPlugin {
     switch call.method {
         case "token":
         DataStorage.handleArgs(parms: call.arguments as? Dictionary<String, Any>)
-        
+        case "request_permission":
+        LocationManager.shared.requestLocationAuthorization()
+        case "start_service":
+        LocationManager.shared.startMySignificantLocationChanges()
      default:
-    LocationManager.shared.requestLocationAuthorization()
-    LocationManager.shared.startMySignificantLocationChanges()
-    result("iOS " + UIDevice.current.systemVersion)
+      LocationManager.shared.requestLocationAuthorization()
+      result("iOS " + UIDevice.current.systemVersion)
     }
   }
   public static func initCall(){
