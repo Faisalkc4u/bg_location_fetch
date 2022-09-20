@@ -1,0 +1,22 @@
+PODS:
+  - bg_location_fetch (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - bg_location_fetch (from `.symlinks/plugins/bg_location_fetch/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  bg_location_fetch:
+    :path: ".symlinks/plugins/bg_location_fetch/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  bg_location_fetch: 4f2ca3b9bdbc11e398f77cfe3f1c02e4d683de90
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.11.3
