@@ -8,4 +8,12 @@ class BgLocationFetch {
   Future<void> setValues(Map<String, dynamic> keys) {
     return BgLocationFetchPlatform.instance.token(keys);
   }
+
+  Future<void> requestForPermission() {
+    return BgLocationFetchPlatform.instance.requestForPermission();
+  }
+
+  Future<void> initService() {
+    return BgLocationFetchPlatform.instance.initService();
+  }
 }
